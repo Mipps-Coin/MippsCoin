@@ -1,11 +1,11 @@
-// Copyright (c) 2011-2022 The Bitcoin Core developers
+// Copyright (c) 2011-2022 The Mippscoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <qt/guiutil.h>
 
-#include <qt/bitcoinaddressvalidator.h>
-#include <qt/bitcoinunits.h>
+#include <qt/mippscoinaddressvalidator.h>
+#include <qt/mippscoinunits.h>
 #include <qt/platformstyle.h>
 #include <qt/qvalidatedlineedit.h>
 #include <qt/sendcoinsrecipient.h>
@@ -130,10 +130,10 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
     widget->setFont(fixedPitchFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a Bitcoin address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a Mippscoin address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
-    widget->setValidator(new BitcoinAddressEntryValidator(parent));
-    widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
+    widget->setValidator(new MippscoinAddressEntryValidator(parent));
+    widget->setCheckValidator(new MippscoinAddressCheckValidator(parent));
 }
 
 void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
@@ -141,10 +141,10 @@ void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut)
     QObject::connect(new QShortcut(shortcut, button), &QShortcut::activated, [button]() { button->animateClick(); });
 }
 
-bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
+bool parseMippscoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no bitcoin: URI
-    if(!uri.isValid() || uri.scheme() != QString("bitcoin"))
+    // return if URI is not valid or is no mippscoin: URI
+    if(!uri.isValid() || uri.scheme() != QString("mippscoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -180,7 +180,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if (!BitcoinUnits::parse(BitcoinUnit::BTC, i->second, &rv.amount)) {
+                if (!MippscoinUnits::parse(MippscoinUnit::BTC, i->second, &rv.amount)) {
                     return false;
                 }
             }
@@ -197,22 +197,22 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
     return true;
 }
 
-bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
+bool parseMippscoinURI(QString uri, SendCoinsRecipient *out)
 {
     QUrl uriInstance(uri);
-    return parseBitcoinURI(uriInstance, out);
+    return parseMippscoinURI(uriInstance, out);
 }
 
-QString formatBitcoinURI(const SendCoinsRecipient &info)
+QString formatMippscoinURI(const SendCoinsRecipient &info)
 {
     bool bech_32 = info.address.startsWith(QString::fromStdString(Params().Bech32HRP() + "1"));
 
-    QString ret = QString("bitcoin:%1").arg(bech_32 ? info.address.toUpper() : info.address);
+    QString ret = QString("mippscoin:%1").arg(bech_32 ? info.address.toUpper() : info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnit::BTC, info.amount, false, BitcoinUnits::SeparatorStyle::NEVER));
+        ret += QString("?amount=%1").arg(MippscoinUnits::format(MippscoinUnit::BTC, info.amount, false, MippscoinUnits::SeparatorStyle::NEVER));
         paramCount++;
     }
 
@@ -430,7 +430,7 @@ void openDebugLogfile()
         QDesktopServices::openUrl(QUrl::fromLocalFile(PathToQString(pathDebug)));
 }
 
-bool openBitcoinConf()
+bool openMippscoinConf()
 {
     fs::path pathConfig = gArgs.GetConfigFilePath();
 
@@ -442,7 +442,7 @@ bool openBitcoinConf()
 
     configFile.close();
 
-    /* Open bitcoin.conf with the associated application */
+    /* Open mippscoin.conf with the associated application */
     bool res = QDesktopServices::openUrl(QUrl::fromLocalFile(PathToQString(pathConfig)));
 #ifdef Q_OS_MACOS
     // Workaround for macOS-specific behavior; see #15409.
@@ -506,15 +506,15 @@ fs::path static StartupShortcutPath()
 {
     ChainType chain = gArgs.GetChainType();
     if (chain == ChainType::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoin.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Mippscoin.lnk";
     if (chain == ChainType::TESTNET) // Remove this special case when testnet CBaseChainParams::DataDir() is incremented to "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Bitcoin (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / fs::u8path(strprintf("Bitcoin (%s).lnk", ChainTypeToString(chain)));
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Mippscoin (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / fs::u8path(strprintf("Mippscoin (%s).lnk", ChainTypeToString(chain)));
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for Bitcoin*.lnk
+    // check for Mippscoin*.lnk
     return fs::exists(StartupShortcutPath());
 }
 
@@ -589,8 +589,8 @@ fs::path static GetAutostartFilePath()
 {
     ChainType chain = gArgs.GetChainType();
     if (chain == ChainType::MAIN)
-        return GetAutostartDir() / "bitcoin.desktop";
-    return GetAutostartDir() / fs::u8path(strprintf("bitcoin-%s.desktop", ChainTypeToString(chain)));
+        return GetAutostartDir() / "mippscoin.desktop";
+    return GetAutostartDir() / fs::u8path(strprintf("mippscoin-%s.desktop", ChainTypeToString(chain)));
 }
 
 bool GetStartOnSystemStartup()
@@ -631,13 +631,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         ChainType chain = gArgs.GetChainType();
-        // Write a bitcoin.desktop file to the autostart directory:
+        // Write a mippscoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == ChainType::MAIN)
-            optionFile << "Name=Bitcoin\n";
+            optionFile << "Name=Mippscoin\n";
         else
-            optionFile << strprintf("Name=Bitcoin (%s)\n", ChainTypeToString(chain));
+            optionFile << strprintf("Name=Mippscoin (%s)\n", ChainTypeToString(chain));
         optionFile << "Exec=" << pszExePath << strprintf(" -min -chain=%s\n", ChainTypeToString(chain));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";

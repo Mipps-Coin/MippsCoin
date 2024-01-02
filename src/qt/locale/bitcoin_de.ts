@@ -47,11 +47,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation type="unfinished">Wählen Sie die Adresse aus, an die Sie Bitcoins senden möchten</translation>
+        <translation type="unfinished">Wählen Sie die Adresse aus, an die Sie Mippscoins senden möchten</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation type="unfinished">Wählen Sie die Adresse aus, mit der Sie Bitcoins empfangen wollen</translation>
+        <translation type="unfinished">Wählen Sie die Adresse aus, mit der Sie Mippscoins empfangen wollen</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -66,13 +66,13 @@
         <translation type="unfinished">Empfangsadressen</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Dies sind Ihre Bitcoin-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Adresse des Empfängers, bevor Sie Bitcoins überweisen.</translation>
+        <source>These are your Mippscoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Dies sind Ihre Mippscoin-Adressen zum Tätigen von Überweisungen. Bitte prüfen Sie den Betrag und die Adresse des Empfängers, bevor Sie Mippscoins überweisen.</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Mippscoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Dies sind Ihre Bitcoin-Adressen für den Empfang von Zahlungen. Verwenden Sie die 'Neue Empfangsadresse erstellen' Taste auf der Registerkarte "Empfangen", um neue Adressen zu erstellen.
+        <translation type="unfinished">Dies sind Ihre Mippscoin-Adressen für den Empfang von Zahlungen. Verwenden Sie die 'Neue Empfangsadresse erstellen' Taste auf der Registerkarte "Empfangen", um neue Adressen zu erstellen.
 Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
     </message>
     <message>
@@ -184,8 +184,8 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
         <translation type="unfinished">Geben Sie die alte und die neue Wallet-Passphrase ein.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Beachten Sie, dass das Verschlüsseln Ihrer Wallet nicht komplett vor Diebstahl Ihrer Bitcoins durch Malware schützt, die Ihren Computer infiziert hat.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your mippscoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Beachten Sie, dass das Verschlüsseln Ihrer Wallet nicht komplett vor Diebstahl Ihrer Mippscoins durch Malware schützt, die Ihren Computer infiziert hat.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -256,7 +256,7 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
     </message>
 </context>
 <context>
-    <name>BitcoinApplication</name>
+    <name>MippscoinApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
         <translation type="unfinished">Die Einstellungsdatei %1 ist möglicherweise beschädigt oder ungültig.</translation>
@@ -334,7 +334,7 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>MippscoinGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">
@@ -343,11 +343,11 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network.</source>
+        <source>%n active connection(s) to Mippscoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n active connection(s) to Bitcoin network.</numerusform>
-            <numerusform>%n active connection(s) to Bitcoin network.</numerusform>
+            <numerusform>%n active connection(s) to Mippscoin network.</numerusform>
+            <numerusform>%n active connection(s) to Mippscoin network.</numerusform>
         </translation>
     </message>
     </context>

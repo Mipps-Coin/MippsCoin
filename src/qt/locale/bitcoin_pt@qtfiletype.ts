@@ -45,7 +45,7 @@
     </message>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>MippscoinGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">
@@ -54,11 +54,11 @@
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Bitcoin network.</source>
+        <source>%n active connection(s) to Mippscoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n conexão ativa na rede Bitcoin.</numerusform>
-            <numerusform>%n conexões ativas na rede Bitcoin.</numerusform>
+            <numerusform>%n conexão ativa na rede Mippscoin.</numerusform>
+            <numerusform>%n conexões ativas na rede Mippscoin.</numerusform>
         </translation>
     </message>
     </context>
@@ -143,7 +143,7 @@ Para mais informações sobre a utilização desse console. digite %6.
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>mippscoin-core</name>
     <message>
         <source>Error: Unable to produce descriptors for this legacy wallet. Make sure to provide the wallet's passphrase if it is encrypted.</source>
         <translation type="unfinished">Erro: Não foi possível produzir descritores para esta carteira antiga. Certifique-se que a carteira foi desbloqueada antes</translation>

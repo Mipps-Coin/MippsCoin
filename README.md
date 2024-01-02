@@ -1,34 +1,34 @@
-Bitcoin Core integration/staging tree
+Mippscoin Core integration/staging tree
 =====================================
 
-https://bitcoincore.org
+https://mippscoincore.org
 
-For an immediately usable, binary version of the Bitcoin Core software, see
-https://bitcoincore.org/en/download/.
+For an immediately usable, binary version of the Mippscoin Core software, see
+https://mippscoincore.org/en/download/.
 
-What is Bitcoin Core?
+What is Mippscoin Core?
 ---------------------
 
-Bitcoin Core connects to the Bitcoin peer-to-peer network to download and fully
+Mippscoin Core connects to the Mippscoin peer-to-peer network to download and fully
 validate blocks and transactions. It also includes a wallet and graphical user
 interface, which can be optionally built.
 
-Further information about Bitcoin Core is available in the [doc folder](/doc).
+Further information about Mippscoin Core is available in the [doc folder](/doc).
 
 License
 -------
 
-Bitcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+Mippscoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
 The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be
-completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
-regularly from release branches to indicate new official, stable release versions of Bitcoin Core.
+completely stable. [Tags](https://github.com/mippscoin/mippscoin/tags) are created
+regularly from release branches to indicate new official, stable release versions of Mippscoin Core.
 
-The https://github.com/bitcoin-core/gui repository is used exclusively for the
+The https://github.com/mippscoin-core/gui repository is used exclusively for the
 development of the GUI. Its master branch is identical in all monotree
 repositories. Release branches and tags do not exist, so please do not fork
 that repository unless it is for development reasons.
@@ -69,7 +69,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Bitcoin Core's Transifex page](https://www.transifex.com/bitcoin/bitcoin/).
+[Mippscoin Core's Transifex page](https://www.transifex.com/mippscoin/mippscoin/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.

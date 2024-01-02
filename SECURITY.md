@@ -2,12 +2,12 @@
 
 ## Supported Versions
 
-See our website for versions of Bitcoin Core that are currently supported with
-security updates: https://bitcoincore.org/en/lifecycle/#schedule
+See our website for versions of Mippscoin Core that are currently supported with
+security updates: https://mippscoincore.org/en/lifecycle/#schedule
 
 ## Reporting a Vulnerability
 
-To report security issues send an email to security@bitcoincore.org (not for support).
+To report security issues send an email to security@mippscoincore.org (not for support).
 
 The following keys may be used to communicate sensitive information to developers:
 

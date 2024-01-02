@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2021 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Mippscoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,18 +26,18 @@
 #define THIN_SP_UTF8 REAL_THIN_SP_UTF8
 #define THIN_SP_HTML HTML_HACK_SP
 
-/** Bitcoin unit definitions. Encapsulates parsing and formatting
+/** Mippscoin unit definitions. Encapsulates parsing and formatting
    and serves as list model for drop-down selection boxes.
 */
-class BitcoinUnits: public QAbstractListModel
+class MippscoinUnits: public QAbstractListModel
 {
     Q_OBJECT
 
 public:
-    explicit BitcoinUnits(QObject *parent);
+    explicit MippscoinUnits(QObject *parent);
 
-    /** Bitcoin units.
-      @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
+    /** Mippscoin units.
+      @note Source: https://en.mippscoin.it/wiki/Units . Please add only sensible ones
      */
     enum class Unit {
         BTC,
@@ -108,9 +108,9 @@ public:
 private:
     QList<Unit> unitlist;
 };
-typedef BitcoinUnits::Unit BitcoinUnit;
+typedef MippscoinUnits::Unit MippscoinUnit;
 
-QDataStream& operator<<(QDataStream& out, const BitcoinUnit& unit);
-QDataStream& operator>>(QDataStream& in, BitcoinUnit& unit);
+QDataStream& operator<<(QDataStream& out, const MippscoinUnit& unit);
+QDataStream& operator>>(QDataStream& in, MippscoinUnit& unit);
 
 #endif // BITCOIN_QT_BITCOINUNITS_H

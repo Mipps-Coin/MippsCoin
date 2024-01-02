@@ -1,4 +1,4 @@
-// Copyright (c) 2023 Bitcoin Developers
+// Copyright (c) 2023 Mippscoin Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,16 +7,16 @@
 #include <clang-tidy/ClangTidyModule.h>
 #include <clang-tidy/ClangTidyModuleRegistry.h>
 
-class BitcoinModule final : public clang::tidy::ClangTidyModule
+class MippscoinModule final : public clang::tidy::ClangTidyModule
 {
 public:
     void addCheckFactories(clang::tidy::ClangTidyCheckFactories& CheckFactories) override
     {
-        CheckFactories.registerCheck<bitcoin::LogPrintfCheck>("bitcoin-unterminated-logprintf");
+        CheckFactories.registerCheck<mippscoin::LogPrintfCheck>("mippscoin-unterminated-logprintf");
     }
 };
 
-static clang::tidy::ClangTidyModuleRegistry::Add<BitcoinModule>
-    X("bitcoin-module", "Adds bitcoin checks.");
+static clang::tidy::ClangTidyModuleRegistry::Add<MippscoinModule>
+    X("mippscoin-module", "Adds mippscoin checks.");
 
-volatile int BitcoinModuleAnchorSource = 0;
+volatile int MippscoinModuleAnchorSource = 0;

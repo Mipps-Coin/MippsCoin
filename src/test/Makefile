@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. bitcoin_test
+	$(MAKE) -C .. mippscoin_test
 clean:
-	$(MAKE) -C .. bitcoin_test_clean
+	$(MAKE) -C .. mippscoin_test_clean
 check:
-	$(MAKE) -C .. bitcoin_test_check
+	$(MAKE) -C .. mippscoin_test_check
