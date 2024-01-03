@@ -564,6 +564,8 @@ crypto_libmippscoin_crypto_base_la_SOURCES = \
   crypto/hmac_sha256.h \
   crypto/hmac_sha512.cpp \
   crypto/hmac_sha512.h \
+  crypto/neoscrypt.cpp \
+  crypto/neoscrypt.h \
   crypto/poly1305.h \
   crypto/poly1305.cpp \
   crypto/muhash.h \
